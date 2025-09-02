@@ -51,5 +51,17 @@
     margin-bottom:12px;
   }
   
-  
+  .row{ display:flex; gap:10px; align-items:flex-start; } /* creates flex container, align to top of container*/
+
+  .bot,.me{
+  padding:12px 14px;
+  border-radius:14px;
+  max-width:76%;
+  white-space:pre-wrap;
+  line-height:1.4;
+  }
+
+  .bot{ background:#0e1633; border:1px solid #21306a; }
+
+  .me{ margin-left:auto; background:#182750; border:1px solid #2a3c7a; }
 
