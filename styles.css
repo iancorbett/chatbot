@@ -5,3 +5,12 @@
     --muted:#9fb0ff;
     --border:#1f2b5f;
   }
+
+  * { box-sizing:border-box; } /*The browser shrinks the content area inside so padding/border fit*/
+
+  html, body { /* target both html and body at once, body is only as tall as its content, setting height to 100%
+    makes it as tall as it parent which is 100, so we need to set html to 100% to stretch to viewport height */
+    height: 100%; /* can also do min-height: 100vh; */
+  }
+  
+
