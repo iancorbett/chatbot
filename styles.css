@@ -88,3 +88,20 @@
   }
 
   button:active{ transform:translateY(1px); }
+
+  .row.system{ justify-content:center; } /* centers spinner in middle of chat*/
+
+.spinner{
+  width:14px; height:14px;
+  border:2px solid #4d66c7;
+  border-top-color:transparent;
+  border-radius:50%;
+  animation:spin .8s linear infinite; /* rotates smoothly forever*/
+}
+
+@keyframes spin{ to{ transform:rotate(360deg); } } /* Starts at rotate(0deg) → ends at rotate(360deg) */
+
+@media (prefers-reduced-motion: reduce){ /* allows users to stop the spinning*/
+  .spinner{ animation:none; }
+  button:active{ transform:none; }
+}
