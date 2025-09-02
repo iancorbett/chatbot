@@ -22,5 +22,11 @@
     place-items:center; /*same as saying align items: center and justify items: center*/
     padding:16px;
   }
+
+  .wrap {
+    width: min(900px, 92vw); /* chooses smaller value, on larger screens maxes at 900, on smaller screens we 
+    choose 92% instead of exact pixel amount */
+  }
+  
   
 
