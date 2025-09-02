@@ -40,6 +40,16 @@
   }
 
   .hint{ color:var(--muted); font-size:12px; margin:8px 2px 14px; }
+
+  .chat{
+    height:min(60vh, 580px); /*choose lower value*/
+    overflow:auto;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding-right:4px;
+    margin-bottom:12px;
+  }
   
   
 
