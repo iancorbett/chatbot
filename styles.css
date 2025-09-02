@@ -65,3 +65,13 @@
 
   .me{ margin-left:auto; background:#182750; border:1px solid #2a3c7a; }
 
+  .inputRow{ display:flex; gap:10px; }
+
+  input[type="text"]{
+    flex:1; /* input expands and takes up all remaining space, all other elements stay at their natural width*/
+    padding:12px 14px;
+    border-radius:12px;
+    border:1px solid #2a3c7a;
+    background:#0d1530;
+    color:var(--text);
+  }
