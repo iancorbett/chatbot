@@ -21,4 +21,18 @@ const KB = [
     { q: "api access", a: "Yes. Create a key under **Settings → Developer**. See docs for rate limits and examples." },
     { q: "integrations", a: "We support Slack, Zapier, and webhooks. More coming soon." },
   ];
+
+    const chatEl = document.getElementById("chat");
+    const msgEl = document.getElementById("msg");
+    const sendBtn = document.getElementById("send");
   
+    function addMsg(text, who = "bot") {
+        const row = document.createElement("div"); //This acts as the container row for the chat message
+        row.className = "row";
+        const bubble = document.createElement("div"); //This will hold the actual message text (the chat bubble)
+        bubble.className = who === "me" ? "me" : "bot"; //This is how you get different styling for user vs bot messages
+        bubble.innerText = text; //Sets the chat bubble’s visible text to whatever message you passed in
+        row.appendChild(bubble); //Puts the bubble inside the row container
+        chatEl.appendChild(row); //Adds the whole row (with bubble inside) to the chat log container
+        chatEl.scrollTop = chatEl.scrollHeight; //Auto-scrolls the chat box to the bottom whenever a new message is added
+      }
