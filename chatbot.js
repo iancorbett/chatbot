@@ -65,3 +65,12 @@ const KB = [
         addMsg("Ready! Ask me something 😎", "bot");
         }
 
+        function cosineSim(a, b) { //a and b are arrays (vectors), each is 512 numbers long
+            let dot = 0, na = 0, nb = 0;
+            for (let i = 0; i < a.length; i++) {
+              dot += a[i] * b[i]; //Computes the dot product of the two vectors
+              na  += a[i] * a[i]; //Compute the squared lengths (magnitudes) of each vector
+              nb  += b[i] * b[i];
+            }
+            return dot / (Math.sqrt(na) * Math.sqrt(nb) + 1e-8); //returns output between -1 and 1
+          }
