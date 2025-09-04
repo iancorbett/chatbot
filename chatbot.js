@@ -36,3 +36,15 @@ const KB = [
         chatEl.appendChild(row); //Adds the whole row (with bubble inside) to the chat log container
         chatEl.scrollTop = chatEl.scrollHeight; //Auto-scrolls the chat box to the bottom whenever a new message is added
       }
+
+      function addSpinner() {
+        const row = document.createElement("div"); //row container for the spinner
+        row.className = "row system"; //assigns custom css styles
+        row.id = "sysrow";
+        const dot = document.createElement("div"); //This is the actual spinner circle
+        dot.className = "spinner"; //aplies spinner class where we defined the spin animation
+        row.appendChild(dot); //Puts the spinner div inside the row container
+        chatEl.appendChild(row); //Inserts the whole row (with the spinner inside) into the chat log
+        chatEl.scrollTop = chatEl.scrollHeight; //Auto-scrolls to the bottom so the spinner is visible, just like new messages
+      }
+
