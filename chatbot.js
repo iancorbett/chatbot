@@ -47,4 +47,9 @@ const KB = [
         chatEl.appendChild(row); //Inserts the whole row (with the spinner inside) into the chat log
         chatEl.scrollTop = chatEl.scrollHeight; //Auto-scrolls to the bottom so the spinner is visible, just like new messages
       }
+      function removeSpinner() {
+        const r = document.getElementById("sysrow");
+        if (r) r.remove();
+      }
+      
 
