@@ -75,5 +75,20 @@ const KB = [
             return dot / (Math.sqrt(na) * Math.sqrt(nb) + 1e-8); //returns output between -1 and 1
           }
 
+          async function answer(userText) {
+            if (!useModel || !kbEmbeddings) return "Model not ready yet — one sec!";
+            const qEmbed = await useModel.embed([userText]);     //enoding user text, reutrns a vector shaped [1,512], representing the meaning of the question
+            const qVec = (await qEmbed.array())[0];              //Converts that tensor into a plain JavaScript array so you can loop over it, has one row, and [0] grabs it and returns the 512 numbers in an array
+            const kb = await kbEmbeddings.array();               // array with N rows, each row has 512 floats
+            qEmbed.dispose();
+          
+            // Find best match
+            let bestIdx = 0, bestScore = -1;
+            for (let i = 0; i < kb.length; i++) { //Loops through every row in kb (every stored question)
+              const score = cosineSim(qVec, kb[i]); //Uses cosineSim(qVec, kb[i]) to measure similarity (0–1 scale, closer to 1 = more similar meaning)
+              if (score > bestScore) { bestScore = score; bestIdx = i; } //Keeps track of the highest score (bestScore) and its index (bestIdx)
+            }
+        }
+
         addSpinner();
         loadModel();
