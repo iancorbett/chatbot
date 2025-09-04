@@ -52,4 +52,16 @@ const KB = [
         if (r) r.remove();
       }
       
+      let useModel, kbEmbeddings;
+      //useModel = the sentence encoder model (pretrained by Google)
+      // kbEmbeddings = all your KB questions converted into semantic vectors (512-numbers each)
+        async function loadModel() {
+        addMsg("Loading brain… (first load ~5–10s)", "bot");
+        // global "use" object comes from the CDN script in index.html
+        useModel = await use.load(); // Load Universal Sentence Encoder
+        const questions = KB.map(item => item.q);
+        kbEmbeddings = await useModel.embed(questions); // Tensor shape: [N, 512]
+        removeSpinner();
+        addMsg("Ready! Ask me something 😎", "bot");
+        }
 
