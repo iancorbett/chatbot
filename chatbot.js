@@ -105,6 +105,8 @@ const KB = [
             });
           }
         
+          sendBtn.addEventListener("click", send);
+          msgEl.addEventListener("keydown", e => { if (e.key === "Enter") send(); });
 
         addSpinner();
         loadModel();
