@@ -92,6 +92,18 @@ const KB = [
             if (bestScore < THRESHOLD) return "I’m not totally sure 🤔 — can you rephrase?"; //limitation of a semantic search bot, only able to answer questions similar to whats in the knowledge base
             return KB[bestIdx].a + `\n\n(score: ${bestScore.toFixed(2)})`;
           }
+
+          function send() {
+            const text = msgEl.value.trim(); //TRIM WHITESPACE
+            if (!text) return;
+            addMsg(text, "me"); //MESSAGE IS SENT BY USER
+            msgEl.value = ""; //value is initialixed to empty string
+            addSpinner(); //spinner is added
+            answer(text).then(res => { //answer function is called with text passed in 
+              removeSpinner(); //spinner is removed
+              addMsg(res, "bot"); //response comes from bot
+            });
+          }
         
 
         addSpinner();
