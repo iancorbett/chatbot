@@ -74,3 +74,6 @@ const KB = [
             }
             return dot / (Math.sqrt(na) * Math.sqrt(nb) + 1e-8); //returns output between -1 and 1
           }
+
+        addSpinner();
+        loadModel();
