@@ -87,8 +87,12 @@ const KB = [
             for (let i = 0; i < kb.length; i++) { //Loops through every row in kb (every stored question)
               const score = cosineSim(qVec, kb[i]); //Uses cosineSim(qVec, kb[i]) to measure similarity (0–1 scale, closer to 1 = more similar meaning)
               if (score > bestScore) { bestScore = score; bestIdx = i; } //Keeps track of the highest score (bestScore) and its index (bestIdx)
-            }
-        }
+            }  
+            const THRESHOLD = 0.47; // decide whether any question is similar enough
+            if (bestScore < THRESHOLD) return "I’m not totally sure 🤔 — can you rephrase?"; //limitation of a semantic search bot, only able to answer questions similar to whats in the knowledge base
+            return KB[bestIdx].a + `\n\n(score: ${bestScore.toFixed(2)})`;
+          }
+        
 
         addSpinner();
         loadModel();
