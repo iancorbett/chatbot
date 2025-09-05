@@ -91,5 +91,12 @@ Adjust the similarity threshold in answer():
 
 const THRESHOLD = 0.47;
 
-
 Update styles in styles.css for branding (colors, fonts, etc).
+
+## Learn More
+
+TensorFlow.js Docs
+
+Universal Sentence Encoder
+
+Cosine Similarity
