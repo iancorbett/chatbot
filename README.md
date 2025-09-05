@@ -63,7 +63,7 @@ The closest match above a threshold (default 0.47) is chosen.
 
 If none are close enough → fallback response.
 
-Example:
+## Example:
 
 User: how can i change my password
 
@@ -83,7 +83,7 @@ No good match (low score).
 
 Bot: I’m not totally sure 🤔 — can you rephrase?
 
-Customization
+## Customization
 
 Edit KB in chatbot.js to add/remove Q&A pairs.
 
