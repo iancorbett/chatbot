@@ -63,3 +63,22 @@ The closest match above a threshold (default 0.47) is chosen.
 
 If none are close enough → fallback response.
 
+Example:
+
+User: how can i change my password
+
+Embedding is closest to KB entry "how do i reset my password".
+
+Bot: Click **Forgot Password** on login.
+
+User: what’s your refund policy
+
+Embedding matches KB entry "refund policy".
+
+Bot: We offer a 14-day refund window for first-time subscriptions.
+
+User: what’s the capital of mars?
+
+No good match (low score).
+
+Bot: I’m not totally sure 🤔 — can you rephrase?
