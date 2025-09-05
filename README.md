@@ -17,16 +17,6 @@ It answers user questions by comparing them against a Knowledge Base (KB) of Q/A
 
 ---
 
-##  Project Structure
-
-project/
-├── index.html # UI skeleton + script includes
-├── styles.css # Clean dark theme styling
-├── chatbot.js # Chatbot logic (embeddings, similarity, message handling)
-
-
----
-
 ## 🛠️ Setup
 
 1. Clone or download this repo.  
