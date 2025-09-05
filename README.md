@@ -5,6 +5,9 @@ It answers user questions by comparing them against a Knowledge Base (KB) of Q/A
 
 ---
 
+<img width="1148" height="716" alt="Screenshot 2025-09-05 at 12 02 48 AM" src="https://github.com/user-attachments/assets/1341ca75-be00-4e42-bfd6-0d2a71d07ae4" />
+
+
 ##  Features
 - **Semantic search** → understands meaning, not just keywords.  
 - **Runs in the browser** → no server needed for basic FAQ bot.  
