@@ -82,3 +82,14 @@ User: what’s the capital of mars?
 No good match (low score).
 
 Bot: I’m not totally sure 🤔 — can you rephrase?
+
+Customization
+
+Edit KB in chatbot.js to add/remove Q&A pairs.
+
+Adjust the similarity threshold in answer():
+
+const THRESHOLD = 0.47;
+
+
+Update styles in styles.css for branding (colors, fonts, etc).
